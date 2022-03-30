@@ -1,8 +1,0 @@
-LICENSE
-README.md
-pyproject.toml
-setup.cfg
-src/tick_tac_toe.egg-info/PKG-INFO
-src/tick_tac_toe.egg-info/SOURCES.txt
-src/tick_tac_toe.egg-info/dependency_links.txt
-src/tick_tac_toe.egg-info/top_level.txt
