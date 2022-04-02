@@ -1,8 +1,8 @@
-from model import GameMaster 
+from model import Game 
 from view import display_game_state, get_input  
 
 def controller():
-    game = GameMaster()
+    game = Game()
 
     while True:
         display_game_state(game.X_positions, game.O_positions) 
