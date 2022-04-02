@@ -1,6 +1,6 @@
 from game import Game 
-from cli import display, input_manager  
-
+from input_manager import input_manager  
+from display import display
 
 def game_with_cli():
     game = Game()
