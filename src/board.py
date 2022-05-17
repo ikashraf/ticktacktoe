@@ -1,4 +1,4 @@
-def display(X,O):
+def board(X,O):
     fmt = lambda num : "X" if num in X else "O" if num in O else " "
     print(f"""
     {fmt(1)}|{fmt(2)}|{fmt(3)}

@@ -1,4 +1,4 @@
-from core import has_win_condition
+from win_condition import has_win_condition
 
 class Game:
     def __init__(self):
@@ -6,22 +6,21 @@ class Game:
         self.X_positions = set()
         self.O_positions = set()
 
-    def x_win(self):
-        return has_win_condition(self.X_positions)
-
-    def o_win(self):
-        return has_win_condition(self.O_positions)
-    
-    def draw(self):
-        return self.__avaiable_positions == set()
-    
-    def x_turn(self):
-        return len(self.__avaiable_positions) % 2 == 1
+    def state(self):
+        if has_win_condition(self.X_positions) :
+            return "X wins"
+        elif has_win_condition(self.O_positions) :
+            return "O wins"
+        elif self.__avaiable_positions == set() :
+            return "It is a Draw"
+        elif len(self.__avaiable_positions) % 2 == 1 :
+            return "X turn"
+        else :
+            return "O turn"
 
     def x_input(self,player_choice):
         self.__update(player_choice, self.X_positions)
-
-    def o_input(self,player_choice):
+    def o_input(self,player_choice,):
         self.__update(player_choice, self.O_positions)
 
     def __update(self, player_choice, positions): 

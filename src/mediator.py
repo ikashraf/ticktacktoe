@@ -1,11 +1,12 @@
-from bot import bot
+from replies import bot_reply, player_reply
     
-class input_manager:
+class Mediator:
     def __init__(self):
-        self.number_of_players = player_choice("number of players (1 or 2): ")
-        self.human = ""
+        self.number_of_players = player_reply("number of players (1 or 2): ")
         if self.number_of_players == 1:
             self.human = input("select marker (X or O) : ").upper()
+        else:  
+            self.human = ""
 
     def x_input(self, X_positions, O_positions):
         return self.__get_input("X", X_positions, O_positions)
@@ -15,16 +16,6 @@ class input_manager:
 
     def __get_input(self, input, X_positions, O_positions):
         if self.number_of_players == 2 or self.human == input:
-            prompt = input + " move : "
-            return player_choice(prompt)
+            return player_reply(input + " move : ")
         else :
-            return bot(X_positions, O_positions)        
- 
-def player_choice(prompt):
-    while True:
-        try:
-            value = int(input(prompt))
-            break
-        except ValueError:
-            print("not an integer")
-    return value  
+            return bot_reply(X_positions, O_positions)        
